@@ -1,0 +1,56 @@
+identity:
+  name: "upstage-information-extract"
+  author: "omiya"
+  label:
+    en_US: "Upstage Information Extract"
+    ja_JP: "Upstage Information Extract"
+    zh_Hans: "Upstage Information Extract"
+    pt_BR: "Upstage Information Extract"
+description:
+  human:
+    en_US: "Extract structured data from documents using custom JSON schema. Define fields you want to extract and get structured JSON output."
+    ja_JP: "カスタムJSONスキーマを使用して文書から構造化データを抽出。抽出したいフィールドを定義し、構造化JSON出力を取得します。"
+    zh_Hans: "使用自定义JSON架构从文档中提取结构化数据。定义要提取的字段并获取结构化JSON输出。"
+    pt_BR: "Extraia dados estruturados de documentos usando esquema JSON personalizado. Defina os campos que deseja extrair e obtenha saída JSON estruturada."
+  llm: "Extract specific fields from documents (PDF, images, office files) based on user-defined JSON schema. Returns structured data as JSON."
+parameters:
+  - name: file
+    type: file
+    required: true
+    label:
+      en_US: "Upload File"
+      ja_JP: "ファイルアップロード"
+      zh_Hans: "上传文件"
+      pt_BR: "Enviar Arquivo"
+    human_description:
+      en_US: "Upload the document file to extract data from"
+      ja_JP: "データを抽出する文書ファイルをアップロードしてください"
+      zh_Hans: "上传要提取数据的文档文件"
+      pt_BR: "Envie o arquivo de documento para extrair dados"
+    llm_description: "Upload the document file to extract information from (PDF, images, DOCX, XLSX, PPTX, etc.)"
+    form: llm
+  - name: extraction_schema
+    type: string
+    required: true
+    label:
+      en_US: "Extraction Schema (JSON)"
+      ja_JP: "Extraction Schema (JSON)"
+      zh_Hans: "Extraction Schema (JSON)"
+      pt_BR: "Extraction Schema (JSON)"
+    human_description:
+      en_US: "Define fields to extract in JSON format. Key: field name, Value: field description"
+      ja_JP: "抽出するフィールドをJSON形式で定義。キー: フィールド名、値: フィールドの説明"
+      zh_Hans: "以JSON格式定义要提取的字段。键：字段名，值：字段描述"
+      pt_BR: "Defina os campos a extrair no formato JSON. Chave: nome do campo, Valor: descrição do campo"
+    placeholder: |
+      {
+        "invoice_number": "Invoice number from the document",
+        "total_amount": "Total amount to be paid",
+        "issue_date": "Date when invoice was issued",
+        "company_name": "Name of the company"
+      }
+    llm_description: "JSON schema defining which fields to extract from the document. Each key is the field name and each value is the field description."
+    form: form
+extra:
+  python:
+    source: tools/upstage-information-extract.py

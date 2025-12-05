@@ -1,0 +1,35 @@
+version: 0.0.1
+type: plugin
+author: omiya0555
+name: upstage
+label:
+  en_US: Upstage
+  ja_JP: Upstage
+  zh_Hans: Upstage
+  pt_BR: Upstage
+description:
+  en_US: Advanced Document AI using Upstage API. Parse documents into text/HTML/Markdown or extract structured data with custom schemas.
+  ja_JP: Upstage APIを使用した高度なDocument AI。文書をテキスト/HTML/Markdownに変換、またはカスタムスキーマで構造化データを抽出。
+  zh_Hans: 使用Upstage API的高级文档AI。将文档转换为文本/HTML/Markdown，或使用自定义架构提取结构化数据。
+  pt_BR: IA de Documentos Avançada usando API Upstage. Converta documentos em texto/HTML/Markdown ou extraia dados estruturados com esquemas personalizados.
+icon: icon.svg
+icon_dark: icon-dark.svg
+resource:
+  memory: 268435456
+  permission: {}
+plugins:
+  tools:
+    - provider/upstage-tool.yaml
+meta:
+  version: 0.0.1
+  arch:
+    - amd64
+    - arm64
+  runner:
+    language: python
+    version: "3.12"
+    entrypoint: main
+  minimum_dify_version: null
+created_at: 2025-09-18T13:52:38.273878+09:00
+privacy: PRIVACY.md
+verified: false

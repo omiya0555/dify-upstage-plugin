@@ -1,0 +1,69 @@
+identity:
+  name: "upstage-document-parser"
+  author: "omiya"
+  label:
+    en_US: "Upstage Document Parser"
+    ja_JP: "Upstage Document Parser"
+    zh_Hans: "Upstage Document Parser"
+    pt_BR: "Upstage Document Parser"
+description:
+  human:
+    en_US: "Advanced Document Parsing Tool. Parse PDFs, images, and office documents into text, HTML, or Markdown format."
+    ja_JP: "高度な文書解析ツール。PDF、画像、オフィス文書をテキスト、HTML、Markdown形式に変換します。"
+    zh_Hans: "高级文档解析工具。将PDF、图像和办公文档转换为文本、HTML或Markdown格式。"
+    pt_BR: "Ferramenta Avançada de Análise de Documentos. Converta PDFs, imagens e documentos de escritório em formato texto, HTML ou Markdown."
+  llm: "Parse documents (PDF, images, office files) into text, HTML, or Markdown using Upstage API. Supports various file formats including JPEG, PNG, PDF, DOCX, XLSX, PPTX."
+parameters:
+  - name: file
+    type: file
+    required: true
+    label:
+      en_US: "Upload File"
+      ja_JP: "ファイルアップロード"
+      zh_Hans: "上传文件"
+      pt_BR: "Enviar Arquivo"
+    human_description:
+      en_US: "Upload the document file to be parsed"
+      ja_JP: "解析する文書ファイルをアップロードしてください"
+      zh_Hans: "上传要解析的文档文件"
+      pt_BR: "Envie o arquivo de documento a ser analisado"
+    llm_description: "Upload the document file to be parsed (PDF, images, DOCX, XLSX, PPTX, etc.)"
+    form: llm
+  - name: output_format
+    type: select
+    required: false
+    default: markdown
+    label:
+      en_US: "Output Format"
+      ja_JP: "出力形式"
+      zh_Hans: "输出格式"
+      pt_BR: "Formato de Saída"
+    human_description:
+      en_US: "Choose the format for the parsed content"
+      ja_JP: "解析されたコンテンツの形式を選択してください"
+      zh_Hans: "选择解析内容的格式"
+      pt_BR: "Escolha o formato para o conteúdo analisado"
+    options:
+      - label:
+          en_US: "Markdown"
+          ja_JP: "Markdown"
+          zh_Hans: "Markdown"
+          pt_BR: "Markdown"
+        value: markdown
+      - label:
+          en_US: "HTML"
+          ja_JP: "HTML"
+          zh_Hans: "HTML"
+          pt_BR: "HTML"
+        value: html
+      - label:
+          en_US: "Text"
+          ja_JP: "テキスト"
+          zh_Hans: "文本"
+          pt_BR: "Texto"
+        value: text
+    llm_description: "Output format for parsed content. Options: markdown, html, text"
+    form: form
+extra:
+  python:
+    source: tools/upstage-tool.py

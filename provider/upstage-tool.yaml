@@ -1,0 +1,42 @@
+identity:
+  author: "omiya"
+  name: "upstage"
+  label:
+    en_US: "Upstage"
+    ja_JP: "Upstage"
+    zh_Hans: "Upstage"
+    pt_BR: "Upstage"
+  description:
+    en_US: "Advanced Document AI using Upstage API. Parse documents into text/HTML/Markdown or extract structured data with custom schemas."
+    ja_JP: "Upstage APIを使用した高度なDocument AI。文書をテキスト/HTML/Markdownに変換、またはカスタムスキーマで構造化データを抽出。"
+    zh_Hans: "使用Upstage API的高级文档AI。将文档转换为文本/HTML/Markdown，或使用自定义架构提取结构化数据。"
+    pt_BR: "IA de Documentos Avançada usando API Upstage. Converta documentos em texto/HTML/Markdown ou extraia dados estruturados com esquemas personalizados."
+  icon: "icon.svg"
+
+credentials_for_provider:
+  upstage_api_key:
+    help:
+      en_US: "Get your Upstage API key from https://console.upstage.ai/api-keys"
+      ja_JP: "Upstage APIキーを https://console.upstage.ai/api-keys から取得してください"
+      zh_Hans: "从 https://console.upstage.ai/api-keys 获取您的Upstage API密钥"
+      pt_BR: "Obtenha sua chave de API Upstage em https://console.upstage.ai/api-keys"
+    label:
+      en_US: "Upstage API Key"
+      ja_JP: "Upstage APIキー"
+      zh_Hans: "Upstage API密钥"
+      pt_BR: "Chave da API Upstage"
+    placeholder:
+      en_US: "Enter your Upstage API key"
+      ja_JP: "Upstage APIキーを入力してください"
+      zh_Hans: "输入您的Upstage API密钥"
+      pt_BR: "Digite sua chave da API Upstage"
+    required: true
+    type: secret-input
+    url: https://console.upstage.ai/api-keys
+
+tools:
+  - tools/upstage-tool.yaml
+  - tools/upstage-information-extract.yaml
+extra:
+  python:
+    source: provider/upstage-tool.py
