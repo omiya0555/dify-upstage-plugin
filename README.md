@@ -14,10 +14,9 @@ Advanced Document AI plugin using Upstage API. Provides two powerful tools for d
 ## Tools Included
 
 ### 1. Upstage Document Parser
-Parse PDFs, images, and office documents into text, HTML, or Markdown format with high accuracy OCR and layout detection.
+Parse PDFs and images into text, HTML, or Markdown format with high accuracy OCR and layout detection.
 
 **Features:**
-- **Multi-format Support**: PDF, DOCX, XLSX, PPTX, JPEG, PNG, BMP, TIFF, HEIC
 - **Multiple Output Formats**: Markdown, HTML, Plain Text
 - **Advanced OCR**: Automatic text recognition with chart detection
 
@@ -27,14 +26,12 @@ Extract structured data from documents using custom JSON schemas. Perfect for au
 **Features:**
 - **Custom Schema Definition**: Define extraction fields in simple JSON format
 - **Structured JSON Output**: Get clean, structured data ready for database integration
-- **High Accuracy**: 90-95% accuracy on complex documents
 - **Flexible Extraction**: Works with any document type without templates or training
 
 ## Common Features
 
 - **Intelligent Memory Cache**: In-memory caching reduces API calls and improves performance
 - **Simple Configuration**: Only requires Upstage API key
-- **Error Handling**: Comprehensive error messages and validation
 
 ## Setup
 
@@ -65,7 +62,7 @@ Extract structured data from documents using custom JSON schemas. Perfect for au
 ## Requirements
 
 - Upstage API key
-- Supported file formats: PDF, images, office documents
+- Supported file formats: PDF, images
 - Network connection to Upstage API
 
 ## Performance Optimization
@@ -76,12 +73,6 @@ The plugin implements an intelligent memory cache system that:
 - Uses MD5 hashing for efficient cache key generation
 - Automatically expires cached content after 1 hour
 - Maintains a maximum of 100 cached items with LRU eviction
-- Thread-safe operations for concurrent requests
-
-### Cache Behavior
-- Document Parser: Same file + same output format = Cache hit
-- Information Extract: Same file + same schema = Cache hit
-- Cache automatically cleans up expired entries
 
 ## API Reference
 
