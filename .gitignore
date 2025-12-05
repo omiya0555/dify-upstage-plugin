@@ -175,5 +175,6 @@ cython_debug/
 .AppleDouble
 .LSOverride
 
-# Dify Plugin packages
+# Dify Plugin packages (except in releases directory)
 *.difypkg
+!releases/*.difypkg
